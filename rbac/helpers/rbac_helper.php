@@ -105,3 +105,14 @@ if(!function_exists("success_redirct")){
 		die();
 	}
 }
+
+//打印测试
+if(!function_exists("p")){
+	function p($var,$type=null){
+	    if($type==1) die(var_dump($var));
+	    echo '<pre>';
+	    print_r($var);
+	    echo '</pre>';
+	    die;
+	}
+}
