@@ -148,6 +148,7 @@ class Role extends CI_Controller {
 		foreach($role_data as $vo){
 			$role_node_list[$vo->dirc][$vo->cont][$vo->func] = TRUE;
 		}
+        if(!isset($role_node_list)) $role_node_list=NULL;
 		$this->load->view('manage/role/action',array('role_id'=>$id,'node'=>$node_list,'rnl'=>$role_node_list));
 	}
 	
