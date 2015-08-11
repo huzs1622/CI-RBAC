@@ -1,7 +1,7 @@
 # CI-RBAC
 CodeIgniter Role-Based Access Control
 
-
+<pre>
 一、系统要求
 PHP 5.2.4以上
 CI 2.x 以上
@@ -78,3 +78,4 @@ $route['default_controller'] = 'index';
 根据项目需求更改相关值。
 
 （8）配置完成，在浏览器里访问项目吧
+</pre>
