@@ -63,15 +63,15 @@ $hook['pre_system'] = array(
 		'params'   => '',
 );
 
-（4）导入数据库，创建表和基础数据
-注意：请选择数据库后再导入。
+（4）配置数据库
+编辑文件：/application/config/database.php  修改：
 
-（5）编辑文件：/application/config/config.php  修改：
+根据项目需求更改相关值。
+（5）编辑文件：/application/config/routes.php  修改：
 $route['default_controller'] = 'index';
 
-（6）配置数据库
-编辑文件：/application/config/database.php  修改：
-根据项目需求更改相关值。
+（6）导入数据库，创建表和基础数据
+注意：请选择数据库后再导入。
 
 （7）配置RBAC
 编辑文件：/application/third_party/rbac/config/rbac.php  修改：
