@@ -25,7 +25,7 @@ README.md  说明文件
 1、复制文件
 （1）、rbac           -->    /application/third_party/rbac
 （2）、controllers    -->    /application/controllers
-（3）、controllers    -->    /application/views
+（3）、views          -->    /application/views
 （4）、static         -->    /static
 
 
