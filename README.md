@@ -13,23 +13,46 @@ CI 2.x 以上
 这是一个基于角色的权限控制，安装配置方便且容易上手。
 
 2、目录结构
-rbac   核心目录
-controllers  控制器
-views   测试的视图界面
-static  静态文件
-mysql.sql  创建数据库表和默认数据
-README.md  说明文件
+├─application
+│  ├─controllers              //控制器
+│  │  ├─manage
+│  │  └─product
+│  ├─third_party
+│  │  └─rbac                  //核心目录
+│  │      ├─config
+│  │      ├─helpers
+│  │      ├─hooks
+│  │      ├─libraries
+│  │      ├─models
+│  │      └─views
+│  │          └─manage
+│  │              ├─member
+│  │              ├─menu
+│  │              ├─node
+│  │              └─role
+│  └─views
+│      └─product              //测试的视图界面
+├─static                      //静态文件
+│    └─bootstrap
+│       ├─css
+│       ├─fonts
+│       └─js
+├─mysql.sql                   //创建数据库表和默认数据
+└─README.md                   //说明文件
+
 
 
 三、安装步骤
-1、复制文件
-（1）、rbac           -->    /application/third_party/rbac
-（2）、controllers    -->    /application/controllers
-（3）、views          -->    /application/views
-（4）、static         -->    /static
+1、文件放置
+复制文件到你的项目目录覆盖即可,目录对应如下:
+（1）/application/third_party/rbac
+（2）/application/controllers
+（3）/application/views
+（4）/static
 
 
-2、开启自动加载第三方包
+2、RBAC配置
+开启自动加载第三方包
 （1）编辑文件：/application/config/autoload.php  修改：
 $autoload['packages'] = array(APPPATH.'third_party/rbac');
 
