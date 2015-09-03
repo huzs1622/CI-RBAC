@@ -44,18 +44,21 @@ class Menu extends CI_Controller {
 	/**
 	 * 菜单新增
 	*/
-	public function add($id,$level,$p_id="NULL"){
-		if($this->input->post()){
+	public function add($id,$level,$p_id=NULL){
+		if($input = $this->input->post()){
 			$title = $this->input->post("title");
 			$sort = $this->input->post("sort");
 			$node = $this->input->post("node");
 			$level = $this->input->post("level");
 			if($id&&$level){
 				if($title){
-					$p_id   = $this->input->post("p_id");
-					$status = $this->input->post("status")==""?"0":"1";
-					$sql = "INSERT INTO rbac_menu (`status`,`title`,`sort`,`node_id`,`p_id`) values( '{$status}','{$title}','{$sort}','{$node}',{$p_id})";
-					$this->db->query($sql);
+					$data['title']=$input['title'];
+					$data['node_id']=$input['node']==''? NULL : 1;
+					$data['p_id']=$p_id=='NULL'? NULL : $p_id;
+					$data['sort']=$input['sort'];
+					$data['status']=$input['status']==""?"0":"1";
+					$this->db->insert('rbac_menu',$data);
+					
 					success_redirct("manage/menu/index","新增菜单成功！");
 				}else{
 					error_redirct("","标题不能为空！");
@@ -150,21 +153,26 @@ class Menu extends CI_Controller {
 			$i++;
 		}
 		$j = 0;
-		foreach($Tmp_menu as $vo){
-			foreach($vo as $cvo){
-				if($j==0){
-					$menu[$cvo->id]["self"] = $cvo;
-				}elseif($j==1){
-					$menu[$cvo->p_id]["child"][$cvo->id]["self"] = $cvo;
-				}else{
-					$menu[$cvo->p_p_id]["child"][$cvo->p_id]["child"][$cvo->id]["self"] =$cvo;
-				}
-			}
-			$j++;
+		if(!empty($Tmp_menu)){
+    		foreach($Tmp_menu as $vo){
+    			foreach($vo as $cvo){
+    				if($j==0){
+    					$menu[$cvo->id]["self"] = $cvo;
+    				}elseif($j==1){
+    					$menu[$cvo->p_id]["child"][$cvo->id]["self"] = $cvo;
+    				}else{
+    					$menu[$cvo->p_p_id]["child"][$cvo->p_id]["child"][$cvo->id]["self"] =$cvo;
+    				}
+    			}
+    			$j++;
+    		}
+    		
+    		$return["id_list"] = substr($all_id_list,0,-1);
+    		$return["menu"]    = $menu;
+    		return $return;
+		}else{
+		    return array();
 		}
-		$return["id_list"] = substr($all_id_list,0,-1);
-		$return["menu"]    = $menu;
-		return $return;
 	}
 
 }

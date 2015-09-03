@@ -1,6 +1,6 @@
 			<hr/>
 			<footer>
-				<p>Copyright @ ToryZen</p>
+				<p>Copyright @ Josen</p>
 			</footer>
 		</div><!--/.container-->
 	</body>
