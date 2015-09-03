@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * RBAC钩子,用于权限验证&菜单生成&视图重写
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 class Rbac {
 	

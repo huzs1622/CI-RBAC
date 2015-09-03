@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * RBAC中默认网关页面
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 class Index extends CI_Controller {
 	

@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * 模型
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 class Rbac_model extends CI_Model{
 	

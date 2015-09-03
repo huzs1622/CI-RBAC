@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * RBAC后台管理中节点模块
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 class Node extends CI_Controller {
 	

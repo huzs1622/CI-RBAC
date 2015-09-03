@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * RBAC后台管理中角色模块
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 class Role extends CI_Controller {
 	

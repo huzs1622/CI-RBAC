@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * RBAC中用到的公共函数
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 //MEMCACHED唯一ID
 if(!function_exists('mem_id')){
@@ -108,11 +108,16 @@ if(!function_exists("success_redirct")){
 
 //打印测试
 if(!function_exists("p")){
-	function p($var,$type=null){
-	    if($type==1) die(var_dump($var));
-	    echo '<pre>';
-	    print_r($var);
-	    echo '</pre>';
-	    die;
+	function p($var, $isdie=TRUE, $type=null, $isjson=FALSE){
+		if($type==1) die(var_dump($var));
+		if($isjson){
+			echo json_encode(array('code'=>TRUE, 'msg'=>'测试数据','data'=>$var));
+			return;
+		}else{
+			echo '<pre>';
+			print_r($var);
+			echo '</pre>';
+		}
+		if($isdie) die;
 	}
 }

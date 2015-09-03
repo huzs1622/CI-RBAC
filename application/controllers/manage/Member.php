@@ -2,8 +2,8 @@
 /**
  * CI RBAC
  * RBAC管理后台中用户模块
- * @author		toryzen
- * @link		http://www.toryzen.com
+ * @author		Josen
+ * @link		http://www.huzs.net
  */
 class Member extends CI_Controller {
 	
